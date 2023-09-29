@@ -4,6 +4,7 @@
   box-sizing : border-box;
   font-family :  'Style Script',cursive;
   color: white;
+  cursor : none;
   /* overflow: hidden; */
 }
 html,body{
@@ -15,6 +16,16 @@ html,body{
     width: 100%;
     /* background-color: black; */
     /* overflow-x : hidden; */
+}
+
+.cursor{
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background-color: rgb(255, 0, 102);
+  position: fixed;
+  z-index: 99;
+  transition : all ease-out 0.2s;
 }
 
 /*? scroll bar */

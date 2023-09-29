@@ -11,6 +11,12 @@ function revealToSpan(){
     })
 }
 revealToSpan();
+let cursor = document.querySelector(".cursor");
+let container = document.querySelector(".container");
+container.addEventListener("mousemove",(dets)=>{
+    cursor.style.left = dets.clientX + "px";
+    cursor.style.top = dets.clientY + "px";
+})
 var tl = gsap.timeline();
 tl.from(".child span",{
     x : "10vw",
@@ -68,5 +74,16 @@ gsap.from(".page2-part2",{
         start : "top 60%",
         end : "top 15%",
         scrub :2,
+    }
+})
+gsap.to(".page3",{
+    backgroundColor : "rgb(1, 19, 20)",
+    scrollTrigger : {
+        trigger : ".page2",
+        start : "top 40%",
+        end : "top 10%",
+        markers : true,
+        scrub : 1,
+        id : "page3"
     }
 })
