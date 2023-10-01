@@ -77,23 +77,23 @@ gsap.from(".page2-part2",{
     }
 })
 
-gsap.to(".page5",{
+gsap.to(".page3",{
     backgroundColor : "rgb(17, 50, 47)",
     scrollTrigger : {
         trigger : ".page2",
         start : "top 70%",
         end : "top 0%",
         scrub : 3,
-        id : "page5",
+        id : "page3",
     },
 })
-gsap.to(".page6",{
+gsap.to(".page4",{
     backgroundColor : "rgb(9, 28, 27)",
     scrollTrigger : {
-        trigger : ".page5",
+        trigger : ".page3",
         start : "top 70%",
         end : "top 0%",
         scrub : 3,
-        id : "page6",
+        id : "page4",
     },
 })
