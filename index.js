@@ -51,7 +51,7 @@ gsap.to(".page2",{
         trigger : ".page1",
         start : "top 80%",
         end : "top 10%",
-        markers : true,
+        // markers : true,
         scrub : 1,
         id : "page2"
     }
@@ -82,8 +82,25 @@ gsap.to(".page3",{
         trigger : ".page2",
         start : "top 40%",
         end : "top 10%",
-        markers : true,
+        // markers : true,
         scrub : 1,
         id : "page3"
     }
 })
+
+let sections = gsap.utils.toArray(".container-image");
+gsap.to(sections,{
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".page3",
+    markers : true,
+    start : "top top",
+    pin: true,
+    scrub: 1,
+    snap: 1 / (sections.length - 1),
+    end: () => "+=" + document.querySelector(".carousal-container").offsetWidth-window.innerWidth,
+    id : "carousal",
+    pinSpacing  : false,
+  }
+});
