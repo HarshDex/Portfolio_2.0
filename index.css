@@ -134,7 +134,7 @@ html,body{
   text-transform: uppercase;
   animation: animate_text 250s linear infinite; /* The 
   animation property */
-  color : white
+  color : white;
 
 }
 .text span {
@@ -155,7 +155,7 @@ html,body{
   width: 100vw;
   background-color: rgb(33, 173, 141);
   z-index: 99;
-  overflow : hidden
+  overflow : hidden;
 }
 .page2-part1{
   display: flex;
@@ -218,29 +218,13 @@ html,body{
   background-color: grey;
 }
 
-.page3{
+.page5{
   height: 100vh;
   width: 100%;
-  background-color: rgb(4, 40, 41);
+  background-color: rgb(17,89,72);
 }
-
-.carousal-container{
-  display: flex;
-  flex-wrap: nowrap;
-  padding-top: 9%;
+.page6{
   height: 100vh;
-  min-width: 600vw;
-  gap: 5vw;
-  background-color: blue;
-  overflow : hidden;
-}
-.container-image{
-  height: 60vh;
-  width: 40vw;
-  background-color: black;
-}
-.container-image img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  width: 100vw;
+  background-color: rgb(17, 50, 47);
 }

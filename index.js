@@ -1,3 +1,4 @@
+gsap.registerPlugin(ScrollTrigger)
 function revealToSpan(){
     document.querySelectorAll(".reveal").forEach(function(elem){
         let spanChild = document.createElement("span");
@@ -44,15 +45,14 @@ tl.to(".parent .child",{
     delay : .2,
 })
 
-gsap.registerPlugin(ScrollTrigger)
-gsap.to(".page2",{
-    backgroundColor : "rgb(4, 40, 41)",
+ScrollTrigger.refresh();
+gsap.to(".page-container .page2",{
+    backgroundColor : "rgb(17,89,72)",
     scrollTrigger : {
         trigger : ".page1",
-        start : "top 80%",
-        end : "top 10%",
-        // markers : true,
-        scrub : 1,
+        start : "top 95%",
+        end : "top 0%",
+        scrub : 3,
         id : "page2"
     }
 })
@@ -61,7 +61,7 @@ gsap.from(".page2-part1",{
     ease : "power1.out",
     scrollTrigger : {
         trigger : ".page1",
-        start : "top 60%",
+        start : "top 50%",
         end : "top 5%",
         scrub :2,
     }
@@ -71,36 +71,29 @@ gsap.from(".page2-part2",{
     ease : "power1.out",
     scrollTrigger : {
         trigger : ".page1",
-        start : "top 60%",
-        end : "top 15%",
+        start : "top 50%",
+        end : "top 10%",
         scrub :2,
     }
 })
-gsap.to(".page3",{
-    backgroundColor : "rgb(1, 19, 20)",
+
+gsap.to(".page5",{
+    backgroundColor : "rgb(17, 50, 47)",
     scrollTrigger : {
         trigger : ".page2",
-        start : "top 40%",
-        end : "top 10%",
-        // markers : true,
-        scrub : 1,
-        id : "page3"
-    }
+        start : "top 70%",
+        end : "top 0%",
+        scrub : 3,
+        id : "page5",
+    },
 })
-
-let sections = gsap.utils.toArray(".container-image");
-gsap.to(sections,{
-  xPercent: -100 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".page2",
-    markers : true,
-    start : "bottom bottom",
-    pin: true,
-    scrub: 1,
-    snap: 1 / (sections.length - 1),
-    end: () => "+=" + document.querySelector(".carousal-container").offsetWidth-window.innerWidth,
-    id : "carousal",
-    pinSpacing  : false,
-  }
-});
+gsap.to(".page6",{
+    backgroundColor : "rgb(9, 28, 27)",
+    scrollTrigger : {
+        trigger : ".page5",
+        start : "top 70%",
+        end : "top 0%",
+        scrub : 3,
+        id : "page6",
+    },
+})
